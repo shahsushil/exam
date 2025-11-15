@@ -1,5 +1,5 @@
 import axios from "axios";
-axios.defaults.baseURL = 'https://online-examination-backend-hyc1.onrender.com/api/v1'
+axios.defaults.baseURL = 'https://backend-orjq.onrender.com/api/v1'
 
 axios.interceptors.request.use(function (req) {
     const user = localStorage.getItem('userData');
