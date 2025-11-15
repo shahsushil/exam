@@ -1,0 +1,13 @@
+import axios from "axios";
+axios.defaults.baseURL = 'https://online-examination-backend-hyc1.onrender.com'
+
+axios.interceptors.request.use(function (req) {
+    const user = localStorage.getItem('userData');
+
+    if (user) {
+        const { token } = JSON.parse(localStorage.getItem('userData'));
+        req.headers.authorization = `Bearer ${token}`;
+        return req;
+    }
+    return req;
+});
